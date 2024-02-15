@@ -1,0 +1,18 @@
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  kafka:
+    consumer:
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      bootstrap-servers: localhost:9092,localhost:9094
+      group-id: product-created-events
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.pblgllgs.core
+server:
+  port: 0
+
