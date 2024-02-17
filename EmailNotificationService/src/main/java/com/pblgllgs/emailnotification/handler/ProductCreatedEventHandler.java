@@ -28,8 +28,7 @@ public class ProductCreatedEventHandler {
 
     @KafkaHandler
     public void handle(ProductCreatedEvent productCreatedEvent) {
-//        if (true) throw new NotRetryableException("An error took place, No need to consume this message again");
-        LOGGER.info("Received a new event: " + productCreatedEvent.getTitle());
+        LOGGER.info("Received a new event: " + productCreatedEvent.getTitle() + " with productId: " + productCreatedEvent.getProductId());
         String url = "http://localhost:8082/response/200";
         try {
             ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, null, String.class);
