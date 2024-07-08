@@ -13,7 +13,10 @@ public class CreateProductRestModel {
 		this.price = price;
 		this.quantity = quantity;
 	}
-	
+
+	public CreateProductRestModel() {
+	}
+
 	public String getTitle() {
 		return title;
 	}
